@@ -7,12 +7,15 @@ create table salary(
 );
 desc salary;
 drop table salary;
+select * from salary;
 
 insert into salary values ('부장', 5000000);
 insert into salary values ('과장', 4000000);
 insert into salary values ('대리', 3000000);
 insert into salary values ('사원', 2000000);
+
 select * from salary;
+delete from salary;
 
 -- 인사관리 테이블
 create table insa(
@@ -22,7 +25,7 @@ create table insa(
 	name	varchar(20) not null,			/* 성명 */
 	jikkub	char(8) not null,				/* 부장 / 과장 / 대리 / 사원 */
 	age		int default 25,					/*나이, 기본값 25 */
-	ipsail	datetime default now(),			/*입사일*/
+	ipsail		datetime default now(),			/*입사일*/
 	gender	char(2) default '여자',			/*성별*/
 	address	varchar(30),					/*주소*/
 	unique key (sabun),						/*중복 불가 키 : 사번 */
@@ -33,7 +36,7 @@ drop table insa;
 
 insert into insa values (default, '24032101', '인사과', '홍길동', '과장', 35, '2000-1-5', '남자', '서울');
 insert into insa values (default, '24032102', '영업과', '김말숙', '대리', 31, '2007-11-25', default, '청주');
-insert into insa values (default, '24032103', '김말숙', '이기자', '사원', 25, '2022-8-22', '남자', '서울');
+insert into insa values (default, '24032103', '총무과', '이기자', '사원', 25, '2022-8-22', '남자', '서울');
 
 select * from insa;
 
